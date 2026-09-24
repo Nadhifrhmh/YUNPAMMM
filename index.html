@@ -1,9 +1,10 @@
+```html
 <!DOCTYPE html>
 <html lang="id" class="h-full bg-slate-100">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Akademik Mahasiswa - UNPAM VIKTOR</title>
+    <title>Portal Akademik UNPAM VIKTOR - Kelas 01TPLP012</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <script>
@@ -25,14 +26,12 @@
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
         .active-tab {
-            background-color: #ffffff;
-            color: #004085;
-            font-weight: 800;
-            border-bottom: 3px solid #ffc107;
+            background-color: #ffffff !important;
+            color: #004085 !important;
+            font-weight: 800 !important;
+            border-bottom: 3px solid #ffc107 !important;
             box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
         }
         .today-highlight {
@@ -40,9 +39,7 @@
             background-color: #f0f7ff !important;
             box-shadow: 0 8px 20px -4px rgba(13, 110, 253, 0.25);
         }
-        .pulse-live {
-            animation: pulse-ring 1.8s infinite;
-        }
+        .pulse-live { animation: pulse-ring 1.8s infinite; }
         @keyframes pulse-ring {
             0% { transform: scale(0.95); opacity: 0.8; }
             50% { transform: scale(1.05); opacity: 1; }
@@ -63,12 +60,12 @@
                         🎓
                     </div>
                     <div>
-                        <h1 class="text-base sm:text-lg font-black tracking-wide leading-tight">PORTAL AKADEMIK</h1>
-                        <p class="text-xs text-blue-200 font-medium">UNPAM Kampus 2 VIKTOR (Serpong)</p>
+                        <h1 class="text-base sm:text-lg font-black tracking-wide leading-tight">PORTAL AKADEMIK MAHASISWA</h1>
+                        <p class="text-xs text-blue-200 font-medium">UNPAM Kampus 2 VIKTOR - Kelas 01TPLP012</p>
                     </div>
                 </div>
                 <span class="md:hidden bg-amber-400 text-slate-950 text-[11px] font-extrabold px-2.5 py-1 rounded-full">
-                    ⚡ REGULER A
+                    👑 REGULER A
                 </span>
             </div>
 
@@ -93,12 +90,12 @@
     <!-- MAIN CONTENT CONTAINER -->
     <main class="max-w-7xl mx-auto w-full px-4 sm:px-6 py-6 flex-grow space-y-6">
 
-        <!-- CARD PROFIL & RADAR HITUNG MUNDUR -->
+        <!-- CARD PROFIL & RADAR HITUNG MUNDUR REAL-TIME -->
         <div class="bg-gradient-to-br from-unpam-dark via-slate-900 to-blue-950 text-white rounded-3xl p-5 sm:p-6 shadow-xl border border-blue-800">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
                 
-                <!-- Kolom 1: Profil Mahasiswa -->
-                <div class="lg:col-span-6 space-y-4 flex flex-col justify-between">
+                <!-- Identitas Mahasiswa -->
+                <div class="lg:col-span-5 space-y-4 flex flex-col justify-between">
                     <div>
                         <div class="flex flex-wrap items-center gap-2 mb-2">
                             <span class="bg-emerald-500 text-white text-[11px] font-extrabold px-3 py-0.5 rounded-full uppercase tracking-wider flex items-center">
@@ -114,40 +111,43 @@
                         </p>
                     </div>
 
-                    <!-- Grid Info Cepat -->
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 bg-white/10 backdrop-blur-md p-3.5 rounded-2xl border border-white/10 text-xs">
-                        <div class="space-y-0.5">
-                            <p class="text-blue-200 text-[10px] font-semibold">💻 Program Studi</p>
-                            <p class="font-bold text-white text-xs">Teknik Informatika S1</p>
+                    <!-- Info Pekan & Tugas Mentari -->
+                    <div class="bg-white/10 backdrop-blur-md p-3.5 rounded-2xl border border-white/10 text-xs space-y-2">
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-200 font-semibold">📍 Program Studi:</span>
+                            <span class="font-bold text-white">Teknik Informatika S1</span>
                         </div>
-                        <div class="space-y-0.5">
-                            <p class="text-blue-200 text-[10px] font-semibold">📍 Ruang Kuliah</p>
-                            <p class="font-bold text-amber-300 text-xs">Ruang V.113 (Lantai 1)</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-blue-200 font-semibold">🏛️ Ruang Kuliah:</span>
+                            <span class="font-bold text-amber-300">V.113 (Kampus VIKTOR)</span>
                         </div>
-                        <div class="col-span-2 sm:col-span-1 space-y-0.5">
-                            <p class="text-blue-200 text-[10px] font-semibold">🗓️ Pekan Saat Ini</p>
-                            <p class="font-bold text-emerald-300 text-xs">Pekan I (Luring / Tatap Muka)</p>
+                        <div class="pt-2 border-t border-white/10 flex justify-between items-center">
+                            <span class="text-blue-200 font-semibold">🗓️ Status Pekan:</span>
+                            <span id="current-week-badge" class="bg-purple-600 text-white font-extrabold px-2.5 py-0.5 rounded-md text-[11px]">
+                                Pekan IV - DARING (Mentari)
+                            </span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Kolom 2: Live Radar Countdown (Mata Kuliah & Angsuran) -->
-                <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                <!-- Radar Countdown Real-Time -->
+                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                     
-                    <!-- Box Radar 1: Jadwal Kuliah Terdekat -->
+                    <!-- Radar 1: Jadwal Kuliah Terdekat / Tugas Mentari -->
                     <div class="bg-slate-900/90 backdrop-blur-md p-4 rounded-2xl border border-blue-600/50 flex flex-col justify-between shadow-lg relative overflow-hidden">
                         <div class="flex items-center justify-between text-xs mb-1">
                             <span class="text-blue-200 font-bold uppercase tracking-wider text-[10px] flex items-center">
                                 ⏱️ JADWAL KULIAH TERDEKAT
                             </span>
                             <span id="subject-status-badge" class="bg-amber-400 text-slate-950 font-black text-[10px] px-2 py-0.5 rounded-md">
-                                OTOMATIS
+                                AUTOMATIC
                             </span>
                         </div>
                         
-                        <div class="my-2">
-                            <p id="next-subject-name" class="font-black text-white text-sm sm:text-base leading-tight">Menghitung Jadwal...</p>
-                            <p id="next-subject-time" class="text-xs text-blue-200 mt-1 font-medium">Waktu: -</p>
+                        <div class="my-2 space-y-1">
+                            <p id="next-subject-name" class="font-black text-white text-sm leading-tight">Menghitung Jadwal...</p>
+                            <p id="next-subject-time" class="text-xs text-blue-200 font-medium">Waktu: -</p>
+                            <p id="next-subject-meeting" class="text-[11px] text-amber-300 font-bold">Pertemuan: -</p>
                         </div>
 
                         <div class="pt-2 border-t border-slate-800 flex justify-between items-center">
@@ -156,25 +156,25 @@
                         </div>
                     </div>
 
-                    <!-- Box Radar 2: Batas Pembayaran Terdekat -->
+                    <!-- Radar 2: Batas Akhir Pembayaran UTS (Reguler A & B) -->
                     <div class="bg-slate-900/90 backdrop-blur-md p-4 rounded-2xl border border-amber-500/50 flex flex-col justify-between shadow-lg relative overflow-hidden">
                         <div class="flex items-center justify-between text-xs mb-1">
                             <span class="text-amber-200 font-bold uppercase tracking-wider text-[10px] flex items-center">
-                                💳 BATAS ANGSURAN KE-2
+                                🚨 BATAS BAYAR UTS (REGULER A)
                             </span>
-                            <span class="bg-emerald-500 text-white font-extrabold text-[9px] px-2 py-0.5 rounded-md">
-                                📅 10 SEP 2026
+                            <span class="bg-red-500 text-white font-extrabold text-[9px] px-2 py-0.5 rounded-md">
+                                📅 13 OKT 2026
                             </span>
                         </div>
 
-                        <div class="my-2">
-                            <p class="font-black text-amber-300 text-sm sm:text-base">Rp 300.000 / Bulan</p>
-                            <p class="text-xs text-blue-200 mt-1 font-medium">Batas Waktu: 10 September 2026</p>
+                        <div class="my-1.5 space-y-0.5">
+                            <p class="font-black text-amber-300 text-sm">Tagihan: Reg, Angsuran 2-3 & UTS</p>
+                            <p class="text-[11px] text-slate-300">Denda Keterlambatan: <span class="font-bold text-red-400">Rp 100.000</span></p>
                         </div>
 
                         <div class="pt-2 border-t border-slate-800 flex justify-between items-center">
-                            <span class="text-blue-300 text-[11px] font-semibold">⏰ Sisa Batas Bayar:</span>
-                            <span id="payment-countdown" class="font-mono font-black text-emerald-400 text-sm">00h 00j 00m 00s</span>
+                            <span class="text-blue-300 text-[11px] font-semibold">⏰ Sisa Batas UTS:</span>
+                            <span id="uts-payment-countdown" class="font-mono font-black text-emerald-400 text-sm">00h 00j 00m 00s</span>
                         </div>
                     </div>
 
@@ -186,31 +186,30 @@
         <!-- TAB NAVIGATION MENU -->
         <div class="bg-slate-200 p-1.5 rounded-2xl flex overflow-x-auto gap-1 shadow-inner border border-slate-300/80 w-full">
             <button onclick="switchTab('jadwal')" id="tab-jadwal" class="flex-1 py-3 px-4 text-xs sm:text-sm font-bold active-tab whitespace-nowrap rounded-xl transition-all duration-200 flex items-center justify-center">
-                📅 Jadwal Kuliah Mingguan
+                📅 Jadwal Kuliah & Mentari
             </button>
             <button onclick="switchTab('angsuran')" id="tab-angsuran" class="flex-1 py-3 px-4 text-xs sm:text-sm font-bold text-slate-600 hover:text-slate-900 whitespace-nowrap rounded-xl transition-all duration-200 flex items-center justify-center">
-                💳 Batas Bayar Angsuran
+                💳 Rincian Batas Bayar & Denda
             </button>
             <button onclick="switchTab('kalender')" id="tab-kalender" class="flex-1 py-3 px-4 text-xs sm:text-sm font-bold text-slate-600 hover:text-slate-900 whitespace-nowrap rounded-xl transition-all duration-200 flex items-center justify-center">
-                📆 Kalender Luring & Daring
+                📆 Kalender Pertemuan Luring/Daring
             </button>
             <button onclick="switchTab('krs')" id="tab-krs" class="flex-1 py-3 px-4 text-xs sm:text-sm font-bold text-slate-600 hover:text-slate-900 whitespace-nowrap rounded-xl transition-all duration-200 flex items-center justify-center">
                 📑 Kartu Rencana Studi (KRS)
             </button>
         </div>
 
-        <!-- TAB 1: JADWAL KULIAH MINGGUAN -->
+        <!-- TAB 1: JADWAL KULIAH MINGGUAN & TUGAS MENTARI -->
         <div id="content-jadwal" class="block space-y-5">
             
-            <!-- Banner Petunjuk Lokasi -->
             <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
                 <div class="flex items-center space-x-3">
                     <div class="bg-blue-100 text-unpam-blue text-2xl p-2.5 rounded-xl font-bold">
                         📍
                     </div>
                     <div>
-                        <h3 class="font-extrabold text-slate-800 text-sm sm:text-base">Jadwal Perkuliahan Kelas 01TPLP012</h3>
-                        <p class="text-xs text-slate-500 mt-0.5">Lokasi Utama Kampus: <strong>Gedung VIKTOR, Lantai 1, Ruang V.113</strong></p>
+                        <h3 class="font-extrabold text-slate-800 text-sm sm:text-base">Jadwal Kuliah Kelas 01TPLP012</h3>
+                        <p class="text-xs text-slate-500 mt-0.5">Lokasi Tatap Muka: <strong>Gedung VIKTOR, Ruang V.113</strong> | E-Learning: <strong>Mentari UNPAM</strong></p>
                     </div>
                 </div>
                 <div id="today-name-badge" class="bg-amber-100 text-amber-900 border border-amber-300 text-xs font-black px-3.5 py-1.5 rounded-xl">
@@ -236,8 +235,11 @@
                                     <span class="text-[10px] font-bold text-slate-500">2 SKS</span>
                                 </div>
                                 <h4 class="font-extrabold text-xs text-slate-900">🔤 Basic English for International Communication</h4>
-                                <p class="text-[11px] text-slate-600"><i class="fas fa-user-tie text-slate-400 mr-1"></i> Dosen: Darmawati</p>
-                                <p class="text-[10px] text-slate-400 font-mono">Kode: 26PAM0010</p>
+                                <p class="text-[11px] text-slate-600"><i class="fas fa-user-tie text-slate-400 mr-1"></i> Darmawati</p>
+                                <div class="pt-1.5 border-t border-slate-200/80 flex justify-between items-center text-[10px]">
+                                    <span class="font-bold text-purple-700">📌 Pertemuan Ke-4</span>
+                                    <span class="bg-purple-100 text-purple-900 font-extrabold px-1.5 py-0.5 rounded">💻 Kerjain Mentari</span>
+                                </div>
                             </div>
 
                             <!-- MK 2 -->
@@ -247,13 +249,16 @@
                                     <span class="text-[10px] font-bold text-slate-500">2 SKS</span>
                                 </div>
                                 <h4 class="font-extrabold text-xs text-slate-900">🌐 Pengantar Teknologi Informasi</h4>
-                                <p class="text-[11px] text-slate-600"><i class="fas fa-user-tie text-slate-400 mr-1"></i> Dosen: Devi Yunita</p>
-                                <p class="text-[10px] text-slate-400 font-mono">Kode: 26TIF0005</p>
+                                <p class="text-[11px] text-slate-600"><i class="fas fa-user-tie text-slate-400 mr-1"></i> Devi Yunita</p>
+                                <div class="pt-1.5 border-t border-slate-200/80 flex justify-between items-center text-[10px]">
+                                    <span class="font-bold text-purple-700">📌 Pertemuan Ke-4</span>
+                                    <span class="bg-purple-100 text-purple-900 font-extrabold px-1.5 py-0.5 rounded">💻 Kerjain Mentari</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="p-3 bg-slate-50 border-t border-slate-100 text-[11px] text-slate-500 font-medium text-center">
-                        📍 Ruang Kuliah: V.113
+                        📍 Ruang Kuliah: V.113 / Mentari
                     </div>
                 </div>
 
@@ -272,8 +277,11 @@
                                     <span class="text-[10px] font-bold text-slate-500">3 SKS</span>
                                 </div>
                                 <h4 class="font-extrabold text-xs text-slate-900">💻 Algoritma & Pemrograman Dasar</h4>
-                                <p class="text-[11px] text-slate-600"><i class="fas fa-user-tie text-slate-400 mr-1"></i> Dosen: Munawaroh</p>
-                                <p class="text-[10px] text-slate-400 font-mono">Kode: 26TIF0001</p>
+                                <p class="text-[11px] text-slate-600"><i class="fas fa-user-tie text-slate-400 mr-1"></i> Munawaroh</p>
+                                <div class="pt-1.5 border-t border-slate-200/80 flex justify-between items-center text-[10px]">
+                                    <span class="font-bold text-purple-700">📌 Pertemuan Ke-5 & 6</span>
+                                    <span class="bg-purple-100 text-purple-900 font-extrabold px-1.5 py-0.5 rounded">💻 Kerjain Mentari</span>
+                                </div>
                             </div>
 
                             <!-- MK 2 -->
@@ -283,549 +291,13 @@
                                     <span class="text-[10px] font-bold text-slate-500">2 SKS</span>
                                 </div>
                                 <h4 class="font-extrabold text-xs text-slate-900">🕌 Agama Islam</h4>
-                                <p class="text-[11px] text-slate-600"><i class="fas fa-user-tie text-slate-400 mr-1"></i> Dosen: Endah Mawarny</p>
-                                <p class="text-[10px] text-slate-400 font-mono">Kode: 26PAM0001</p>
+                                <p class="text-[11px] text-slate-600"><i class="fas fa-user-tie text-slate-400 mr-1"></i> Endah Mawarny</p>
+                                <div class="pt-1.5 border-t border-slate-200/80 flex justify-between items-center text-[10px]">
+                                    <span class="font-bold text-purple-700">📌 Pertemuan Ke-4</span>
+                                    <span class="bg-purple-100 text-purple-900 font-extrabold px-1.5 py-0.5 rounded">💻 Kerjain Mentari</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="p-3 bg-slate-50 border-t border-slate-100 text-[11px] text-slate-500 font-medium text-center">
-                        📍 Ruang Kuliah: V.113
-                    </div>
-                </div>
-
-                <!-- RABU -->
-                <div id="day-card-3" class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="bg-unpam-blue text-white px-4 py-3 font-extrabold text-xs flex justify-between items-center">
-                            <span class="flex items-center text-sm">📌 RABU</span>
-                            <span class="bg-blue-950/80 text-amber-300 text-[10px] px-2 py-0.5 rounded-md font-mono">2 Mata Kuliah</span>
-                        </div>
-                        <div class="p-3.5 space-y-3">
-                            <!-- MK 1 -->
-                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 space-y-1.5">
-                                <div class="flex justify-between items-center">
-                                    <span class="text-[10px] font-black text-blue-700 bg-blue-100 px-2 py-0.5 rounded-md font-mono">⏰ 07.10 - 08.50 WIB</span>
-                                    <span class="text-[10px] font-bold text-slate-500">3 SKS</span>
-                                </div>
-                                <h4 class="font-extrabold text-xs text-slate-900">📐 Logika Informatika</h4>
-                                <p class="text-[11px] text-slate-600"><i class="fas fa-user-tie text-slate-400 mr-1"></i> Dosen: Dede Handayani</p>
-                                <p class="text-[10px] text-slate-400 font-mono">Kode: 26TIF0004</p>
-                            </div>
-
-                            <!-- MK 2 -->
-                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 space-y-1.5">
-                                <div class="flex justify-between items-center">
-                                    <span class="text-[10px] font-black text-blue-700 bg-blue-100 px-2 py-0.5 rounded-md font-mono">⏰ 08.50 - 10.30 WIB</span>
-                                    <span class="text-[10px] font-bold text-slate-500">3 SKS</span>
-                                </div>
-                                <h4 class="font-extrabold text-xs text-slate-900">🧮 Kalkulus</h4>
-                                <p class="text-[11px] text-slate-600"><i class="fas fa-user-tie text-slate-400 mr-1"></i> Dosen: Herwis Gultom</p>
-                                <p class="text-[10px] text-slate-400 font-mono">Kode: 26TIF0003</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-3 bg-slate-50 border-t border-slate-100 text-[11px] text-slate-500 font-medium text-center">
-                        📍 Ruang Kuliah: V.113
-                    </div>
-                </div>
-
-                <!-- JUMAT -->
-                <div id="day-card-5" class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs transition-all duration-300 flex flex-col justify-between">
-                    <div>
-                        <div class="bg-unpam-blue text-white px-4 py-3 font-extrabold text-xs flex justify-between items-center">
-                            <span class="flex items-center text-sm">📌 JUMAT</span>
-                            <span class="bg-blue-950/80 text-amber-300 text-[10px] px-2 py-0.5 rounded-md font-mono">2 Mata Kuliah</span>
-                        </div>
-                        <div class="p-3.5 space-y-3">
-                            <!-- MK 1 -->
-                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 space-y-1.5">
-                                <div class="flex justify-between items-center">
-                                    <span class="text-[10px] font-black text-blue-700 bg-blue-100 px-2 py-0.5 rounded-md font-mono">⏰ 08.50 - 10.30 WIB</span>
-                                    <span class="text-[10px] font-bold text-slate-500">3 SKS</span>
-                                </div>
-                                <h4 class="font-extrabold text-xs text-slate-900">🖥️ Arsitektur & Organisasi Komputer</h4>
-                                <p class="text-[11px] text-slate-600"><i class="fas fa-user-tie text-slate-400 mr-1"></i> Dosen: Intan Kumalasari</p>
-                                <p class="text-[10px] text-slate-400 font-mono">Kode: 26TIF0002</p>
-                            </div>
-
-                            <!-- MK 2 -->
-                            <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 space-y-1.5">
-                                <div class="flex justify-between items-center">
-                                    <span class="text-[10px] font-black text-blue-700 bg-blue-100 px-2 py-0.5 rounded-md font-mono">⏰ 10.30 - 12.10 WIB</span>
-                                    <span class="text-[10px] font-bold text-slate-500">2 SKS</span>
-                                </div>
-                                <h4 class="font-extrabold text-xs text-slate-900">🇮🇩 Pancasila</h4>
-                                <p class="text-[11px] text-slate-600"><i class="fas fa-user-tie text-slate-400 mr-1"></i> Dosen: Sri Rahayu</p>
-                                <p class="text-[10px] text-slate-400 font-mono">Kode: 26PAM0009</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-3 bg-slate-50 border-t border-slate-100 text-[11px] text-slate-500 font-medium text-center">
-                        📍 Ruang Kuliah: V.113
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- TAB 2: BATAS BAYAR ANGSURAN -->
-        <div id="content-angsuran" class="hidden space-y-5">
-            
-            <!-- Aturan Penting Kartu Ujian -->
-            <div class="bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 p-4 sm:p-5 rounded-2xl shadow-md space-y-2">
-                <h3 class="font-black text-sm sm:text-base flex items-center">
-                    🚨 ATURAN SYARAT CETAK KARTU UJIAN MAHASISWA
-                </h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs font-bold text-slate-900">
-                    <div class="bg-white/80 backdrop-blur-md p-3 rounded-xl border border-amber-400">
-                        🎟️ <strong>KARTU UTS (Ujian Tengah Semester):</strong> Wajib Lunas Angsuran Ke-1, Ke-2, dan Ke-3.
-                    </div>
-                    <div class="bg-white/80 backdrop-blur-md p-3 rounded-xl border border-amber-400">
-                        🎟️ <strong>KARTU UAS (Ujian Akhir Semester):</strong> Wajib Lunas Angsuran Ke-4, Ke-5, dan Ke-6.
-                    </div>
-                </div>
-            </div>
-
-            <!-- Grid 6 Kartu Angsuran -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                
-                <!-- Angsuran 1 -->
-                <div class="bg-emerald-50 border-2 border-emerald-400 rounded-2xl p-4 shadow-xs relative">
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="font-black text-xs text-emerald-900">ANGSURAN KE-1</span>
-                        <span class="bg-emerald-500 text-white font-extrabold text-[10px] px-2.5 py-0.5 rounded-md">
-                            ✅ LUNAS
-                        </span>
-                    </div>
-                    <p class="text-sm font-extrabold text-slate-800">Batas Waktu: 31 Agustus 2026</p>
-                    <p class="text-xs text-slate-600 mt-1">Syarat Pengisian KRS Awal Semester.</p>
-                    <div class="mt-3 pt-2 border-t border-emerald-200 text-xs font-bold text-emerald-700">
-                        Status: Terverifikasi Sistem
-                    </div>
-                </div>
-
-                <!-- Angsuran 2 -->
-                <div class="bg-blue-50 border-2 border-blue-500 rounded-2xl p-4 shadow-md relative">
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="font-black text-xs text-blue-900">ANGSURAN KE-2</span>
-                        <span class="bg-blue-600 text-white font-extrabold text-[10px] px-2.5 py-0.5 rounded-md animate-pulse">
-                            ⚡ BERJALAN
-                        </span>
-                    </div>
-                    <p class="text-sm font-extrabold text-slate-900">Batas Waktu: 10 September 2026</p>
-                    <p class="text-xs text-slate-600 mt-1">Pembayaran Angsuran Perkuliahan Bulanan.</p>
-                    <div class="mt-3 pt-2 border-t border-blue-200 text-xs font-mono font-bold text-blue-900 flex justify-between">
-                        <span>Sisa Waktu:</span>
-                        <span id="angsuran2-countdown" class="text-blue-700">00 Hari 00 Jam</span>
-                    </div>
-                </div>
-
-                <!-- Angsuran 3 -->
-                <div class="bg-amber-50 border-2 border-amber-400 rounded-2xl p-4 shadow-md relative">
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="font-black text-xs text-amber-950">ANGSURAN KE-3</span>
-                        <span class="bg-amber-400 text-slate-950 font-black text-[10px] px-2.5 py-0.5 rounded-md">
-                            🎟️ SYARAT UTS
-                        </span>
-                    </div>
-                    <p class="text-sm font-extrabold text-red-700">Batas Waktu: 10 Oktober 2026</p>
-                    <p class="text-xs text-slate-700 mt-1 font-semibold">Syarat mutlak cetak kartu UTS!</p>
-                    <div class="mt-3 pt-2 border-t border-amber-200 text-xs font-mono font-bold text-amber-900 flex justify-between">
-                        <span>Sisa Waktu:</span>
-                        <span id="angsuran3-countdown" class="text-amber-800">00 Hari 00 Jam</span>
-                    </div>
-                </div>
-
-                <!-- Angsuran 4 -->
-                <div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-xs">
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="font-black text-xs text-slate-700">ANGSURAN KE-4</span>
-                        <span class="bg-slate-100 text-slate-600 font-bold text-[10px] px-2.5 py-0.5 rounded-md">
-                            🗓️ BULAN KE-4
-                        </span>
-                    </div>
-                    <p class="text-sm font-extrabold text-slate-800">Batas Waktu: 10 November 2026</p>
-                    <p class="text-xs text-slate-500 mt-1">Pembayaran bulanan pasca UTS.</p>
-                </div>
-
-                <!-- Angsuran 5 -->
-                <div class="bg-amber-50 border-2 border-amber-400 rounded-2xl p-4 shadow-md">
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="font-black text-xs text-amber-950">ANGSURAN KE-5</span>
-                        <span class="bg-amber-400 text-slate-950 font-black text-[10px] px-2.5 py-0.5 rounded-md">
-                            🎟️ SYARAT UAS
-                        </span>
-                    </div>
-                    <p class="text-sm font-extrabold text-red-700">Batas Waktu: 05 Desember 2026</p>
-                    <p class="text-xs text-slate-700 mt-1 font-semibold">Syarat mutlak cetak kartu UAS!</p>
-                </div>
-
-                <!-- Angsuran 6 -->
-                <div class="bg-white border border-slate-200 rounded-2xl p-4 shadow-xs">
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="font-black text-xs text-slate-700">ANGSURAN KE-6</span>
-                        <span class="bg-emerald-100 text-emerald-800 font-bold text-[10px] px-2.5 py-0.5 rounded-md">
-                            🏁 PELUNASAN
-                        </span>
-                    </div>
-                    <p class="text-sm font-extrabold text-slate-800">Batas Waktu: 10 Januari 2027</p>
-                    <p class="text-xs text-slate-500 mt-1">Pelunasan akhir semester ganjil.</p>
-                </div>
-
-            </div>
-
-            <!-- Petunjuk Cara Bayar -->
-            <div class="bg-slate-900 text-white p-4 rounded-2xl text-xs space-y-1.5">
-                <h4 class="font-extrabold text-amber-400 text-sm flex items-center">
-                    📲 CARA BAYAR SANGAT MUDAH:
-                </h4>
-                <p class="text-slate-200">1. Buka website <strong>my.unpam.ac.id</strong> &gt; Masuk ke menu <strong>Keuangan</strong>.</p>
-                <p class="text-slate-200">2. Salin <strong>Kode Virtual Account (VA) Bank DKI</strong> Anda.</p>
-                <p class="text-slate-200">3. Transfer via Mobile Banking, M-Banking Bank Lain, atau Teller Bank.</p>
-            </div>
-
-        </div>
-
-        <!-- TAB 3: KALENDER AKADEMIK -->
-        <div id="content-kalender" class="hidden space-y-4">
-            
-            <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
-                <div>
-                    <h3 class="font-extrabold text-slate-800 text-sm sm:text-base">📆 Kalender Pekan Luring (Kampus) & Daring (Online Mentari)</h3>
-                    <p class="text-xs text-slate-500 mt-0.5">Jadwal tatap muka di kelas diselang-seling minggu online.</p>
-                </div>
-                <div class="flex gap-2">
-                    <span class="bg-blue-100 text-blue-900 text-[11px] font-bold px-2.5 py-1 rounded-lg">🏫 Luring = Kampus V.113</span>
-                    <span class="bg-purple-100 text-purple-900 text-[11px] font-bold px-2.5 py-1 rounded-lg">💻 Daring = Mentari</span>
-                </div>
-            </div>
-
-            <div class="overflow-x-auto rounded-2xl border border-slate-200 shadow-xs bg-white">
-                <table class="w-full text-xs text-left text-slate-700">
-                    <thead class="bg-unpam-dark text-white uppercase text-[11px]">
-                        <tr>
-                            <th class="p-3">Pekan Perkuliahan</th>
-                            <th class="p-3">Jadwal Tatap Muka (Luring Kampus)</th>
-                            <th class="p-3">Jadwal Online (Daring Mentari)</th>
-                            <th class="p-3">Status Perkuliahan</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-slate-100">
-                        <tr class="bg-amber-100/80 font-bold text-slate-900 border-l-4 border-amber-500">
-                            <td class="p-3">Pekan I</td>
-                            <td class="p-3 text-slate-950 font-black">31 Agt - 04 Sep 2026</td>
-                            <td class="p-3 text-slate-400">-</td>
-                            <td class="p-3 text-amber-900 font-extrabold">🏫 Luring (Masuk Kampus V.113) - SEDANG BERJALAN</td>
-                        </tr>
-                        <tr>
-                            <td class="p-3 font-semibold">Pekan II</td>
-                            <td class="p-3 text-slate-400">-</td>
-                            <td class="p-3 font-semibold text-purple-900">07 - 11 Sep 2026</td>
-                            <td class="p-3 text-purple-700 font-bold">💻 Daring (Belajar Online di Mentari)</td>
-                        </tr>
-                        <tr class="bg-slate-50">
-                            <td class="p-3 font-semibold">Pekan III</td>
-                            <td class="p-3 font-semibold text-blue-900">14 - 18 Sep 2026</td>
-                            <td class="p-3 text-slate-400">-</td>
-                            <td class="p-3 text-blue-700 font-bold">🏫 Luring (Tatap Muka di Kampus)</td>
-                        </tr>
-                        <tr>
-                            <td class="p-3 font-semibold">Pekan IV</td>
-                            <td class="p-3 text-slate-400">-</td>
-                            <td class="p-3 font-semibold text-purple-900">21 - 25 Sep 2026</td>
-                            <td class="p-3 text-purple-700 font-bold">💻 Daring (Belajar Online di Mentari)</td>
-                        </tr>
-                        <tr class="bg-slate-50">
-                            <td class="p-3 font-semibold">Pekan V</td>
-                            <td class="p-3 font-semibold text-blue-900">28 Sep - 02 Okt 2026</td>
-                            <td class="p-3 text-slate-400">-</td>
-                            <td class="p-3 text-blue-700 font-bold">🏫 Luring (Tatap Muka di Kampus)</td>
-                        </tr>
-                        <tr>
-                            <td class="p-3 font-semibold">Pekan VI</td>
-                            <td class="p-3 text-slate-400">-</td>
-                            <td class="p-3 font-semibold text-purple-900">05 - 09 Okt 2026</td>
-                            <td class="p-3 text-purple-700 font-bold">💻 Daring (Belajar Online di Mentari)</td>
-                        </tr>
-                        <tr class="bg-slate-50">
-                            <td class="p-3 font-semibold">Pekan VII</td>
-                            <td class="p-3 font-semibold text-blue-900">12 - 16 Okt 2026</td>
-                            <td class="p-3 text-slate-400">-</td>
-                            <td class="p-3 text-blue-700 font-bold">🏫 Luring (Persiapan Ujian UTS)</td>
-                        </tr>
-                        <tr class="bg-red-50 text-red-950 font-black border-l-4 border-red-600">
-                            <td class="p-3">Pekan VIII</td>
-                            <td class="p-3 text-center" colspan="2">19 - 24 OKTOBER 2026</td>
-                            <td class="p-3 text-red-700">🎟️ UTS (UJIAN TENGAH SEMESTER)</td>
-                        </tr>
-                        <tr class="bg-slate-50">
-                            <td class="p-3 font-semibold">Pekan IX - XV</td>
-                            <td class="p-3 font-semibold text-slate-700" colspan="2">Oktober - Desember 2026</td>
-                            <td class="p-3 text-slate-700 font-bold">Perkuliahan Lanjutan (Selang-Seling Luring/Daring)</td>
-                        </tr>
-                        <tr class="bg-red-100 text-red-950 font-black border-l-4 border-red-700">
-                            <td class="p-3">Pekan XVI</td>
-                            <td class="p-3 text-center" colspan="2">14 - 18 DESEMBER 2026</td>
-                            <td class="p-3 text-red-800">🎟️ UAS (UJIAN AKHIR SEMESTER)</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-        </div>
-
-        <!-- TAB 4: KARTU RENCANA STUDI (KRS) -->
-        <div id="content-krs" class="hidden space-y-4">
-            
-            <div class="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex justify-between items-center">
-                <div>
-                    <h3 class="font-extrabold text-slate-800 text-sm sm:text-base">📑 Kartu Rencana Studi (KRS) Resmi</h3>
-                    <p class="text-xs text-slate-500 mt-0.5">Total Beban Studi Terdaftar: <strong class="text-unpam-blue">20 SKS</strong></p>
-                </div>
-                <span class="bg-emerald-100 text-emerald-900 text-xs font-black px-3 py-1.5 rounded-xl border border-emerald-300">
-                    ✅ STATUS VERIFIKASI LUNAS
-                </span>
-            </div>
-
-            <div class="overflow-x-auto rounded-2xl border border-slate-200 shadow-xs bg-white">
-                <table class="w-full text-xs text-left text-slate-700">
-                    <thead class="bg-unpam-dark text-white uppercase text-[11px]">
-                        <tr>
-                            <th class="p-3 text-center">No</th>
-                            <th class="p-3">Kode MK</th>
-                            <th class="p-3">Nama Mata Kuliah</th>
-                            <th class="p-3 text-center">SKS</th>
-                            <th class="p-3">Kelas</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-slate-100">
-                        <tr><td class="p-3 text-center font-bold">1</td><td class="p-3 font-mono font-bold text-blue-900">26PAM0001</td><td class="p-3 font-bold text-slate-800">🕌 AGAMA ISLAM</td><td class="p-3 text-center font-extrabold">2</td><td class="p-3 font-semibold">01TPLP012</td></tr>
-                        <tr class="bg-slate-50"><td class="p-3 text-center font-bold">2</td><td class="p-3 font-mono font-bold text-blue-900">26PAM0010</td><td class="p-3 font-bold text-slate-800">🔤 BASIC ENGLISH FOR INTERNATIONAL COMMUNICATION</td><td class="p-3 text-center font-extrabold">2</td><td class="p-3 font-semibold">01TPLP012</td></tr>
-                        <tr><td class="p-3 text-center font-bold">3</td><td class="p-3 font-mono font-bold text-blue-900">26TIF0001</td><td class="p-3 font-bold text-slate-800">💻 ALGORITMA DAN PEMROGRAMAN DASAR</td><td class="p-3 text-center font-extrabold">3</td><td class="p-3 font-semibold">01TPLP012</td></tr>
-                        <tr class="bg-slate-50"><td class="p-3 text-center font-bold">4</td><td class="p-3 font-mono font-bold text-blue-900">26TIF0002</td><td class="p-3 font-bold text-slate-800">🖥️ ARSITEKTUR DAN ORGANISASI KOMPUTER</td><td class="p-3 text-center font-extrabold">3</td><td class="p-3 font-semibold">01TPLP012</td></tr>
-                        <tr><td class="p-3 text-center font-bold">5</td><td class="p-3 font-mono font-bold text-blue-900">26TIF0003</td><td class="p-3 font-bold text-slate-800">🧮 KALKULUS</td><td class="p-3 text-center font-extrabold">3</td><td class="p-3 font-semibold">01TPLP012</td></tr>
-                        <tr class="bg-slate-50"><td class="p-3 text-center font-bold">6</td><td class="p-3 font-mono font-bold text-blue-900">26TIF0004</td><td class="p-3 font-bold text-slate-800">📐 LOGIKA INFORMATIKA</td><td class="p-3 text-center font-extrabold">3</td><td class="p-3 font-semibold">01TPLP012</td></tr>
-                        <tr><td class="p-3 text-center font-bold">7</td><td class="p-3 font-mono font-bold text-blue-900">26TIF0005</td><td class="p-3 font-bold text-slate-800">🌐 PENGANTAR TEKNOLOGI INFORMASI</td><td class="p-3 text-center font-extrabold">2</td><td class="p-3 font-semibold">01TPLP012</td></tr>
-                        <tr class="bg-slate-50"><td class="p-3 text-center font-bold">8</td><td class="p-3 font-mono font-bold text-blue-900">26PAM0009</td><td class="p-3 font-bold text-slate-800">🇮🇩 PANCASILA</td><td class="p-3 text-center font-extrabold">2</td><td class="p-3 font-semibold">01TPLP012</td></tr>
-                        <tr class="bg-amber-100 font-extrabold text-slate-900">
-                            <td class="p-3 text-right" colspan="3">TOTAL BEBAN SKS:</td>
-                            <td class="p-3 text-center text-sm font-black text-unpam-blue">20 SKS</td>
-                            <td class="p-3 text-emerald-800 font-bold">Lengkap 8 Matkul</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-        </div>
-
-        <!-- BANTUAN AKSES SISTEM UNPAM -->
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-2">
-            <a href="https://mentari.unpam.ac.id" target="_blank" rel="noopener" class="bg-gradient-to-r from-purple-800 to-indigo-900 text-white p-4 rounded-2xl shadow-sm hover:shadow-md transition flex items-center justify-between">
-                <div>
-                    <h4 class="font-extrabold text-sm">🌐 Mentari E-Learning</h4>
-                    <p class="text-xs text-purple-200 mt-0.5">Kuliah & Absen Online</p>
-                </div>
-                <i class="fas fa-external-link-alt text-purple-300"></i>
-            </a>
-
-            <a href="https://my.unpam.ac.id" target="_blank" rel="noopener" class="bg-gradient-to-r from-unpam-dark to-unpam-blue text-white p-4 rounded-2xl shadow-sm hover:shadow-md transition flex items-center justify-between">
-                <div>
-                    <h4 class="font-extrabold text-sm">🔐 Portal MyUnpam</h4>
-                    <p class="text-xs text-blue-200 mt-0.5">Nilai & Bayar Angsuran</p>
-                </div>
-                <i class="fas fa-external-link-alt text-blue-300"></i>
-            </a>
-
-            <a href="https://maps.app.goo.gl/itZ9UcB21qyD3mBf7" target="_blank" rel="noopener" class="bg-gradient-to-r from-emerald-800 to-teal-900 text-white p-4 rounded-2xl shadow-sm hover:shadow-md transition flex items-center justify-between">
-                <div>
-                    <h4 class="font-extrabold text-sm">📍 Peta Kampus VIKTOR</h4>
-                    <p class="text-xs text-emerald-200 mt-0.5">Gedung VIKTOR Serpong</p>
-                </div>
-                <i class="fas fa-map-marker-alt text-emerald-300"></i>
-            </a>
-        </div>
-
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="bg-slate-900 text-slate-400 py-4 text-center text-xs border-t border-slate-800 mt-auto">
-        <p>© 2026 Universitas Pamulang - Kelas 01TPLP012 (Kampus 2 VIKTOR)</p>
-    </footer>
-
-    <script>
-        // Tab Switcher Engine
-        function switchTab(tabName) {
-            const tabs = ['jadwal', 'angsuran', 'kalender', 'krs'];
-            tabs.forEach(tab => {
-                const tabElement = document.getElementById(`tab-${tab}`);
-                const contentElement = document.getElementById(`content-${tab}`);
-                if (tab === tabName) {
-                    tabElement.classList.add('active-tab');
-                    tabElement.classList.remove('text-slate-600');
-                    contentElement.classList.remove('hidden');
-                    contentElement.classList.add('block');
-                } else {
-                    tabElement.classList.remove('active-tab');
-                    tabElement.classList.add('text-slate-600');
-                    contentElement.classList.add('hidden');
-                    contentElement.classList.remove('block');
-                }
-            });
-        }
-
-        // Data Master Jadwal Perkuliahan
-        // Day Index: 1=Senin, 2=Selasa, 3=Rabu, 5=Jumat
-        const scheduleData = [
-            { day: 1, dayName: 'Senin', name: 'Basic English for International Communication', startHour: 7, startMin: 10, endHour: 8, endMin: 50 },
-            { day: 1, dayName: 'Senin', name: 'Pengantar Teknologi Informasi', startHour: 8, startMin: 50, endHour: 10, endMin: 30 },
-            { day: 2, dayName: 'Selasa', name: 'Algoritma & Pemrograman Dasar', startHour: 8, startMin: 50, endHour: 10, endMin: 30 },
-            { day: 2, dayName: 'Selasa', name: 'Agama Islam', startHour: 10, startMin: 30, endHour: 12, endMin: 10 },
-            { day: 3, dayName: 'Rabu', name: 'Logika Informatika', startHour: 7, startMin: 10, endHour: 8, endMin: 50 },
-            { day: 3, dayName: 'Rabu', name: 'Kalkulus', startHour: 8, startMin: 50, endHour: 10, endMin: 30 },
-            { day: 5, dayName: 'Jumat', name: 'Arsitektur & Organisasi Komputer', startHour: 8, startMin: 50, endHour: 10, endMin: 30 },
-            { day: 5, dayName: 'Jumat', name: 'Pancasila', startHour: 10, startMin: 30, endHour: 12, endMin: 10 }
-        ];
-
-        const dayNames = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
-
-        function padTwo(num) {
-            return num < 10 ? '0' + num : num;
-        }
-
-        // Real-Time Engine (Main Loop)
-        function updateEngine() {
-            const now = new Date();
-
-            // 1. Live Header Clock
-            const dayText = dayNames[now.getDay()];
-            const dateText = now.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
-            const timeText = padTwo(now.getHours()) + ':' + padTwo(now.getMinutes()) + ':' + padTwo(now.getSeconds()) + ' WIB';
-            document.getElementById('realtime-clock').innerText = dayText + ', ' + dateText + ' - ' + timeText;
-
-            // 2. Today Card Highlight
-            const currentDayIndex = now.getDay();
-            document.getElementById('today-name-badge').innerText = '🌟 Hari Ini: ' + dayText;
-
-            [1, 2, 3, 5].forEach(dayNum => {
-                const card = document.getElementById(`day-card-${dayNum}`);
-                if (card) {
-                    if (dayNum === currentDayIndex) {
-                        card.classList.add('today-highlight');
-                    } else {
-                        card.classList.remove('today-highlight');
-                    }
-                }
-            });
-
-            // 3. Class Schedule Live Radar Calculation
-            const currentHour = now.getHours();
-            const currentMin = now.getMinutes();
-            const currentSec = now.getSeconds();
-            const currentSecondsToday = (currentHour * 3600) + (currentMin * 60) + currentSec;
-
-            let targetClass = null;
-            let statusBadgeText = 'OTOMATIS';
-            let totalDiffSeconds = 0;
-
-            // Check today's classes
-            const todayClasses = scheduleData.filter(item => item.day === currentDayIndex);
-
-            for (let item of todayClasses) {
-                const classStartSec = (item.startHour * 3600) + (item.startMin * 60);
-                const classEndSec = (item.endHour * 3600) + (item.endMin * 60);
-
-                if (currentSecondsToday >= classStartSec && currentSecondsToday <= classEndSec) {
-                    targetClass = item;
-                    statusBadgeText = '🔴 BERLANGSUNG';
-                    totalDiffSeconds = classEndSec - currentSecondsToday;
-                    break;
-                } else if (currentSecondsToday < classStartSec) {
-                    targetClass = item;
-                    statusBadgeText = '⏳ SEGERA MULAI';
-                    totalDiffSeconds = classStartSec - currentSecondsToday;
-                    break;
-                }
-            }
-
-            // If no more classes today, find next class day
-            if (!targetClass) {
-                let dayOffset = 1;
-                while (dayOffset <= 7) {
-                    const checkDayIndex = (currentDayIndex + dayOffset) % 7;
-                    const futureClasses = scheduleData.filter(item => item.day === checkDayIndex);
-                    if (futureClasses.length > 0) {
-                        targetClass = futureClasses[0];
-                        statusBadgeText = '📅 MENDATANG';
-
-                        const targetStartSec = (targetClass.startHour * 3600) + (targetClass.startMin * 60);
-                        const secTillMidnight = (24 * 3600) - currentSecondsToday;
-                        const gapDaysSec = (dayOffset - 1) * 24 * 3600;
-                        totalDiffSeconds = secTillMidnight + gapDaysSec + targetStartSec;
-                        break;
-                    }
-                    dayOffset++;
-                }
-            }
-
-            // Render Schedule Radar Info
-            const badgeEl = document.getElementById('subject-status-badge');
-            const nameEl = document.getElementById('next-subject-name');
-            const timeEl = document.getElementById('next-subject-time');
-            const countEl = document.getElementById('next-subject-countdown');
-
-            if (targetClass) {
-                badgeEl.innerText = statusBadgeText;
-                if (statusBadgeText.includes('BERLANGSUNG')) {
-                    badgeEl.className = 'bg-red-500 text-white font-extrabold text-[10px] px-2 py-0.5 rounded-md animate-pulse';
-                } else {
-                    badgeEl.className = 'bg-amber-400 text-slate-950 font-extrabold text-[10px] px-2 py-0.5 rounded-md';
-                }
-
-                nameEl.innerText = targetClass.name;
-                timeEl.innerText = targetClass.dayName + ', ' + padTwo(targetClass.startHour) + '.' + padTwo(targetClass.startMin) + ' - ' + padTwo(targetClass.endHour) + '.' + padTwo(targetClass.endMin) + ' WIB';
-
-                const hrs = Math.floor(totalDiffSeconds / 3600);
-                const mins = Math.floor((totalDiffSeconds % 3600) / 60);
-                const secs = totalDiffSeconds % 60;
-                countEl.innerText = padTwo(hrs) + 'j ' + padTwo(mins) + 'm ' + padTwo(secs) + 's';
-            }
-
-            // 4. Payment Countdowns Calculation
-            const timeNow = now.getTime();
-
-            // Angsuran 2: 10 Sep 2026 23:59:59
-            const pay2Target = new Date(2026, 8, 10, 23, 59, 59).getTime(); // September = index 8
-            const diffPay2 = pay2Target - timeNow;
-
-            if (diffPay2 > 0) {
-                const days = Math.floor(diffPay2 / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((diffPay2 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((diffPay2 % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((diffPay2 % (1000 * 60)) / 1000);
-
-                document.getElementById('payment-countdown').innerText = days + 'h ' + padTwo(hours) + 'j ' + padTwo(minutes) + 'm ' + padTwo(seconds) + 's';
-                document.getElementById('angsuran2-countdown').innerText = days + ' Hari ' + padTwo(hours) + ' Jam';
-            } else {
-                document.getElementById('payment-countdown').innerText = 'JATUH TEMPO';
-                document.getElementById('angsuran2-countdown').innerText = 'Jatuh Tempo';
-            }
-
-            // Angsuran 3: 10 Okt 2026 23:59:59
-            const pay3Target = new Date(2026, 9, 10, 23, 59, 59).getTime(); // October = index 9
-            const diffPay3 = pay3Target - timeNow;
-
-            if (diffPay3 > 0) {
-                const days3 = Math.floor(diffPay3 / (1000 * 60 * 60 * 24));
-                const hours3 = Math.floor((diffPay3 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                document.getElementById('angsuran3-countdown').innerText = days3 + ' Hari ' + padTwo(hours3) + ' Jam';
-            }
-        }
-
-        // Initialize On Load
-        window.onload = function() {
-            updateEngine();
-            setInterval(updateEngine, 1000);
-        };
-    </script>
-</body>
-</html>
+                  
